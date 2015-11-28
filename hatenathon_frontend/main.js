@@ -101,8 +101,14 @@ function main(){
                           .nodes(d3.values(nodes))
                           .links(links)
                           .size([width,height])
-                          .linkDistance(100)
-                          .charge(-500)
+                          .linkDistance(function(d){
+                            console.log(d);
+                            return 100*(1.5-d.bookmarkRate);
+                          })
+                          .charge(function(d){
+
+                            return -users[d.name]["bookmarkAverage"]*10;
+                          })
                           .on("tick",tick)
                           .start();
 
