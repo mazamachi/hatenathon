@@ -162,7 +162,7 @@ function main(){
           // console.log(d);
           if(d.target.name == name){
             // console.log(d.source);
-            funs.push(d.source.name);
+            fans.push(d.source.name);
           }
         });
         console.log(fans);
