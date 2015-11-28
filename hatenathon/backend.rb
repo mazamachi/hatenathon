@@ -38,9 +38,9 @@ class User
     @user_hash = {}
     @category_hash = {}
     sum_of_bookmarks = 0
-    @num_of_entries = [entries.length, 10].max
+    @num_of_entries = [entries.length, 10].min
     # TODO: 数変える
-    entries[0...@num_of_entries].each do |entry|
+    Parallel.each(entries[0...@num_of_entries], in_threads:10) do |entry|
       response = open('http://b.hatena.ne.jp/entry/jsonlite/?url='+CGI.escape(entry.link.href))
       begin
         entry_json = JSON.parse(response.read)
@@ -50,13 +50,13 @@ class User
       # TODO: 数変える
       sum_of_bookmarks += entry_json["count"]
       next if entry_json["bookmarks"] == nil
-      num_of_bookmarks = [entry_json["bookmarks"].length, 10].max
+      num_of_bookmarks = [entry_json["bookmarks"].length, 10].min
       entry_json["bookmarks"].sort_by{|b| b["timestamp"]}[0...num_of_bookmarks].each do |b|
         @user_hash[b["user"]] ||= 0
         @user_hash[b["user"]] += 1
       end
     end
-    @bookmark_average = sum_of_bookmarks / @num_of_entries.to_f
+    @bookmark_average = (@num_of_entries!=0) ? sum_of_bookmarks / @num_of_entries.to_f : 0
 
     return @user_hash
   end
@@ -94,7 +94,7 @@ def create_network_json(*user_names, max_depth:3)
   user_hash = {}
   links = []
   (0...max_depth).each do |depth|
-    Parallel.each(open_array[depth], in_threads:5) do |user_name|
+    Parallel.each(open_array[depth], in_threads:10) do |user_name|
       if user_hash[user_name] == nil
         user = User.new(user_name)
         user_hash[user_name] = user.create_user_hash
@@ -109,4 +109,4 @@ def create_network_json(*user_names, max_depth:3)
   return JSON::pretty_generate([{users:user_hash, links:links}])
 end
 
-puts create_network_json("SWIMATH2",max_depth:3)
+# puts create_network_json("SWIMATH2",max_depth:4)
