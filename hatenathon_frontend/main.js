@@ -36,6 +36,11 @@ function main(){
       // console.log(nodes);
     }
 
+    d3.select("#searchbtn")
+      .on("click",function(){
+        searchButton();
+      });
+
     var zoom = d3.behavior.zoom()
                           .scaleExtent([0.1, 10])
                           .on("zoom", zoomed);
@@ -140,8 +145,11 @@ function main(){
                    .enter()
                    .append("g")
                    .attr("fill","#CCCCCC")
+                   .attr("id",function(d){
+                     return "g_" + d.name;
+                   })
                    .on("click",function(d){
-                     viewModal(d);
+                     viewModal(d.name);
                    });
 
      node.append("circle")
@@ -191,7 +199,7 @@ function main(){
         d3.select(this).classed("dragging", false);
       }
 
-      function viewModal(d){
+      function viewModal(name){
         // console.log(d);
         // var characterName = d;
         var modal = d3.select("#modal");
@@ -204,11 +212,11 @@ function main(){
               .duration(100)
               .style("opacity",1.0);
 
-        modal.select("#content").select("#top").html(ContentBox(d.name));
-        modal.select("#content").select("#topmedia").html(fanList(d.name));
+        modal.select("#content").select("#top").html(ContentBox(name));
+        modal.select("#content").select("#topmedia").html(fanList(name));
         d3.select("#changeIDBtn")
           .on("click",function(){
-            searchFan(d.name);
+            searchFan(name);
           });
       }
 
@@ -312,5 +320,22 @@ function main(){
         ids.push(userID);
         main();
       }
+
+      function searchButton(){
+        // console.log("button");
+        var id = document.getElementById("userID").value;
+        console.log(id);
+        if(users[id] != undefined){
+          // viewModal(id);
+          var g = d3.select("#g_"+id).selectAll("circle")
+          g.transition()
+           .duration(1500)
+           .style("fill","rgb(244, 252, 174)")
+           .transition()
+           .duration(1500)
+           .style("fill","url('#image_" + id + "')");
+        }
+      };
+
   });
 };
