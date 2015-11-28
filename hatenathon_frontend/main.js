@@ -1,5 +1,5 @@
 var width = window.innerWidth * 0.8;
-var height = window.innerHeight * 0.8;
+var height = window.innerHeight * 0.95;
 const WeightToRadius = 6;
 const gojoTreshHold = 0.6;
 
@@ -25,10 +25,21 @@ function main(){
       // console.log(nodes);
     }
 
+    var zoom = d3.behavior.zoom()
+                          .scaleExtent([0.1, 10])
+                          .on("zoom", zoomed);
+
+    var drag = d3.behavior.drag()
+                          .origin(function(d) { return d; })
+                          .on("dragstart", dragstarted)
+                          .on("drag", dragged)
+                          .on("dragend", dragended);
+
     var svg = d3.select(".dataView")
                 .append("svg")
                 .attr("width",width)
-                .attr("height",height);
+                .attr("height",height)
+                .call(zoom);
 
     var defs = svg.append("defs");
 
@@ -49,6 +60,32 @@ function main(){
        .append("svg:path")
        .attr("d","M0,-5L10,0L0,5");
 
+     defs.selectAll("pattern")
+         .data(Object.keys(users))
+         .enter()
+         .append("pattern")
+         .attr("id",function(d){
+          //  console.log(d);
+           return "image_" + d;
+         })
+         .attr({
+           width: "100%",
+           height: "100%",
+           x: "0%",
+           y: "0%",
+           viewBox: "0 0 512 512"
+         })
+         .append("svg:image")
+         .attr("xlink:href",function(d){
+           return users[d].iconURL;
+         })
+         .attr({
+           width: 512,
+           height: 512,
+           x: "0%",
+           y: "0%"
+         });
+
      var graph = d3.layout.force()
                           .nodes(d3.values(nodes))
                           .links(links)
@@ -58,7 +95,9 @@ function main(){
                           .on("tick",tick)
                           .start();
 
-     var link = svg.selectAll(".link")
+     var container = svg.append("g");
+
+     var link = container.selectAll(".link")
                    .data(graph.links())
                    .enter()
                    .append("line")
@@ -79,15 +118,14 @@ function main(){
 
      // console.log(graph.links());
 
-     var node = svg.selectAll(".node")
+     var node = container.selectAll(".node")
                    .data(graph.nodes())
                    .enter()
                    .append("g")
                    .attr("fill","#CCCCCC")
                    .on("click",function(d){
                      viewModal(d);
-                   })
-                   .call(graph.drag);
+                   });
 
      node.append("circle")
          .attr("r",function(d){
@@ -99,7 +137,9 @@ function main(){
            num = Math.sqrt(num);
            return num.toString();
          })
-         .attr("fill","gray");
+         .style("fill",function(d){
+           return "url('#image_" + d.name + "')";
+         });
 
 
       function tick(){
@@ -115,6 +155,23 @@ function main(){
         node.attr("transform",function(d){
           return "translate(" + d.x + "," + d.y + ")";
         });
+      }
+
+      function zoomed() {
+        container.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+      }
+
+      function dragstarted(d) {
+        d3.event.sourceEvent.stopPropagation();
+        d3.select(this).classed("dragging", true);
+      }
+
+      function dragged(d) {
+        d3.select(this).attr("cx", d.x = d3.event.x).attr("cy", d.y = d3.event.y);
+      }
+
+      function dragended(d) {
+        d3.select(this).classed("dragging", false);
       }
 
       function viewModal(d){
@@ -143,17 +200,19 @@ function main(){
 
         var content = "";
 
-        content += '<div class="media">'
-        content +=  ' <div class="media-left">'
+        content += '<div class="media">';
+        content +=  ' <div class="media-left">';
         content += '   <img src=" '+ users[name].iconURL +' " height = "100%">'
-        content += ' </div>'
-        content +=  '<div class="media-body">'
-        content +=  '  <div class="col-md-12">userName:' + name +'</div>'
-        content +=  '  <div class="col-md-12">Blog:<a href="'+users[name].blogURL+'">'+ users[name].blogTitle +'</a></div>'
-        content += '<div class="col-md-12">bookmarkAverage:'+users[name].bookmarkAverage+'</div>'
-        content += '<div class="col-md-12" id="topmedia"></div>'
-        content +=  '</div>'
-        content += '</div>'
+        content += ' </div>';
+        content +=  '<div class="media-body">';
+        content +=  '  <div class="col-md-3 text-right">userName:</div><div class="col-md-9">' + name +'</div>';
+        var blogTitle = users[name].blogTitle;
+        var bookmarkAverage = users[name].bookmarkAverage;
+        content +=  '  <div class="col-md-3 text-right">Blog:</div><div class="col-md-9"><a href="'+users[name].blogURL+'">'+ blogTitle +'</a></div>';
+        content += '<div class="col-md-3 text-right">Popularity:</div><div class="col-md-9">'+bookmarkAverage+'</div>';
+        content += '<div class="col-md-12" id="topmedia"></div>';
+        content +=  '</div>';
+        content += '</div>';
         content += '</div>';
 
         return content;
@@ -172,16 +231,26 @@ function main(){
         var list="";
         if(fans.length != 0){
           fans.forEach(function(name){
-            list += '<div class="media">'
-            list +=  ' <div class="media-left">'
+            list += '<div class="media">';
+            list +=  ' <div class="media-left">';
             list += '   <img src=" '+ users[name].iconURL +' " height = "100%">'
-            list += ' </div>'
-            list +=  '<div class="media-body">'
-            list +=  '  <div class="col-md-12">userName:' + name +'</div>'
-            list +=  '  <div class="col-md-12">Blog:<a href="'+users[name].blogURL+'">'+ users[name].blogTitle +'</a></div>'
-            list += '<div class="col-md-12">bookmarkAverage:'+users[name].bookmarkAverage+'</div>'
-            list +=  '</div>'
-            list += '</div>'
+            list += ' </div>';
+            list +=  '<div class="media-body">';
+            list +=  '  <div class="col-md-3 text-right">userName:</div><div class="col-md-9">' + name +'</div>';
+            console.log(users[name].blogTitle);
+            if(users[name].blogTitle == null){
+              var blogTitle = "No Blog";
+              var bookmarkAverage = 0;
+              list +=  '  <div class="col-md-3 text-right">Blog:</div><div class="col-md-9">'+ blogTitle +'</div>';
+            }else{
+              var blogTitle = users[name].blogTitle;
+              var bookmarkAverage = users[name].bookmarkAverage;
+              list +=  '  <div class="col-md-3 text-right">Blog:</div><div class="col-md-9"><a href="'+users[name].blogURL+'">'+ blogTitle +'</a></div>';
+            }
+
+            list += '<div class="col-md-3 text-right">Popularity:</div><div class="col-md-9">'+bookmarkAverage+'</div>';
+            list +=  '</div>';
+            list += '</div>';
             list += '</div>';
           });
         }else{
