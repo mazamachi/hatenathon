@@ -17,8 +17,8 @@
       <div class="form-group">
       <form class="navbar-form navbar-right" role="form">
           <label for="userID"><a class="navbas-brand">user ID:</a></label>
-          <input type="userId" class="form-control" id="userID">
-        <button type="submit" class="btn btn-default">Append</button>
+          <input type="userId" class="form-control" id="userID" name="userId">
+        <button type="button" id="appendbtn" class="btn btn-default" onClick="searchFan(this.form.userId.value)">Append</button>
         <button type="button" class="btn btn-default navbar-right" id="searchbtn">Search</button>
       </form>
     </div>

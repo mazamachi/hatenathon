@@ -70,8 +70,8 @@ class User
     }
   end
 
-  def create_links_array
-    self.generate_user_ratio_hash
+  def create_links_array(num=10)
+    self.generate_user_ratio_hash(num)
     @user_ratio_hash.map{|fan_name,value| {
         target: @user_name,
         source: fan_name,
@@ -88,7 +88,7 @@ class User
   end
 end
 
-def create_network_json(*user_names, max_depth:3)
+def create_network_json(*user_names, max_depth:3, people:10)
   open_array = [*user_names]+ [[]]*(max_depth-1)
   user_hash = {}
   links = []
@@ -101,7 +101,7 @@ def create_network_json(*user_names, max_depth:3)
         user_hash[user_name] = user.create_user_hash
         next if !user.has_blog
         if depth<max_depth-1
-          links += user.create_links_array
+          links += user.create_links_array(people)
           open_array[depth+1] += user.fans
         end
       end
@@ -111,3 +111,4 @@ def create_network_json(*user_names, max_depth:3)
 end
 
 # puts create_network_json(["SWIMATH2", "g-gourmedia", "keisolutions", "eaidem", "ikdhkr", "biogLife", "hazama19258370", "keikun028", "moarh", "Rosylife", "sugatareiji", "abberoad", "skky17", "buried_treasure"],max_depth:3)
+# puts create_network_json(["hikarujinzai"],max_depth:4)

@@ -16,7 +16,7 @@ end
 get '/network' do
   if params[:id]
     p params[:id]
-    create_network_json(params[:id])
+    create_network_json(params[:id], max_depth:2, people:20)
   # else
   end
 end

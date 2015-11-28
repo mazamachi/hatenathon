@@ -2,12 +2,12 @@ var width = window.innerWidth * 0.8;
 var height = window.innerHeight * 0.95;
 var ids = []
 const WeightToRadius = 6;
-const gojoTreshHold = 0.6;
+const gojoTreshHold = 0.5;
 // queue()
 //     .defer(d3.json, "http://localhost:4567/network?id=SWIMATH2")
 //     .await(main);
 function main(){
-  var path = "big_example3.json"
+  var path = "hikarujinzai4.json"
   if (ids.length != 0){
     path = "http://localhost:1234/network?"
     path += ids.map(function(id){
@@ -19,7 +19,8 @@ function main(){
       console.log(err);
       console.log("err,hage!!");
     }else{
-      // console.log(data);
+      d3.select("svg").remove();
+      console.log(data);
       var links = data[0].links;
       var users = data[0].users;
       var nodes = {};
@@ -314,12 +315,7 @@ function main(){
         return data.source[axis] + (data.target[axis] - data.source[axis]) * lineRadRatio;
       }
 
-      function searchFan(userID){
-        console.log(userID);
-        d3.select("svg").remove();
-        ids.push(userID);
-        main();
-      }
+
 
       function searchButton(){
         // console.log("button");
@@ -339,3 +335,9 @@ function main(){
 
   });
 };
+function searchFan(userID){
+  console.log(userID);
+
+  ids.push(userID);
+  main();
+}
