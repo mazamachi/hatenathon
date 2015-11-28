@@ -1,7 +1,6 @@
 require 'open-uri'
 require 'json'
 require 'uri'
-require 'time'
 require 'rss'
 require 'cgi/util'
 require 'parallel'

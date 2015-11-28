@@ -1,6 +1,5 @@
 require 'sinatra'
 require 'json'
-require 'active_record'
 require "sinatra/reloader"
 load "./backend.rb"
 
