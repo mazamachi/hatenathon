@@ -1,6 +1,12 @@
 require 'sinatra'
 require 'json'
 require "sinatra/reloader"
+require 'sinatra/cross_origin'
+
+configure do
+  enable :cross_origin
+end
+
 load "./backend.rb"
 
 get '/' do
