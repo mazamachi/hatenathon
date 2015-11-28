@@ -7,16 +7,22 @@
         "iconURL": "http://cdn1.www.st-hatena.com/users/SW/SWIMATH2/profile.gif",
         "bookmarkAverage": 34.166666666666664
       },
+      "honeybe": {
+        "blogTitle": "honeybeの日記",
+        "blogURL": "http://honeybe.hateblo.jp/",
+        "iconURL": "http://cdn1.www.st-hatena.com/users/ho/honeybe/profile.gif",
+        "bookmarkAverage": 0.0
+      },
       "masayoshinym": {
         "blogTitle": null,
         "blogURL": null,
         "iconURL": "http://cdn1.www.st-hatena.com/users/ma/masayoshinym/profile.gif",
         "bookmarkAverage": null
       },
-      "osakaspy6160": {
+      "morioka": {
         "blogTitle": null,
         "blogURL": null,
-        "iconURL": "http://cdn1.www.st-hatena.com/users/os/osakaspy6160/profile.gif",
+        "iconURL": "http://cdn1.www.st-hatena.com/users/mo/morioka/profile.gif",
         "bookmarkAverage": null
       },
       "hyaknihyak": {
@@ -25,29 +31,11 @@
         "iconURL": "http://cdn1.www.st-hatena.com/users/hy/hyaknihyak/profile.gif",
         "bookmarkAverage": 6.4
       },
-      "hatebupost": {
+      "flyingbird1": {
         "blogTitle": null,
         "blogURL": null,
-        "iconURL": "http://cdn1.www.st-hatena.com/users/ha/hatebupost/profile.gif",
+        "iconURL": "http://cdn1.www.st-hatena.com/users/fl/flyingbird1/profile.gif",
         "bookmarkAverage": null
-      },
-      "peketamin": {
-        "blogTitle": "peketaminの日記",
-        "blogURL": "http://peketamin.hatenablog.jp/",
-        "iconURL": "http://cdn1.www.st-hatena.com/users/pe/peketamin/profile.gif",
-        "bookmarkAverage": 0.26666666666666666
-      },
-      "honeybe": {
-        "blogTitle": "honeybeの日記",
-        "blogURL": "http://honeybe.hateblo.jp/",
-        "iconURL": "http://cdn1.www.st-hatena.com/users/ho/honeybe/profile.gif",
-        "bookmarkAverage": 0.0
-      },
-      "mhkohei": {
-        "blogTitle": "インターネットの人になりたい",
-        "blogURL": "http://think-feel.hatenablog.com/",
-        "iconURL": "http://cdn1.www.st-hatena.com/users/mh/mhkohei/profile.gif",
-        "bookmarkAverage": 0.5357142857142857
       },
       "rodori": {
         "blogTitle": "学者たちを駁して",
@@ -61,11 +49,23 @@
         "iconURL": "http://cdn1.www.st-hatena.com/users/ka/karur4n/profile.gif",
         "bookmarkAverage": 0.9
       },
-      "flyingbird1": {
-        "blogTitle": null,
-        "blogURL": null,
-        "iconURL": "http://cdn1.www.st-hatena.com/users/fl/flyingbird1/profile.gif",
-        "bookmarkAverage": null
+      "ginga0118": {
+        "blogTitle": "ツヨシのブログ",
+        "blogURL": "http://ginga0118.hatenablog.com/",
+        "iconURL": "http://cdn1.www.st-hatena.com/users/gi/ginga0118/profile.gif",
+        "bookmarkAverage": 0.13333333333333333
+      },
+      "sucrose": {
+        "blogTitle": "唯物是真 @Scaled_Wurm",
+        "blogURL": "http://sucrose.hatenablog.com/",
+        "iconURL": "http://cdn1.www.st-hatena.com/users/su/sucrose/profile.gif",
+        "bookmarkAverage": 5.433333333333334
+      },
+      "mhkohei": {
+        "blogTitle": "インターネットの人になりたい",
+        "blogURL": "http://think-feel.hatenablog.com/",
+        "iconURL": "http://cdn1.www.st-hatena.com/users/mh/mhkohei/profile.gif",
+        "bookmarkAverage": 0.5357142857142857
       },
       "lawson-nkmr": {
         "blogTitle": null,
@@ -73,16 +73,16 @@
         "iconURL": "http://cdn1.www.st-hatena.com/users/la/lawson-nkmr/profile.gif",
         "bookmarkAverage": null
       },
-      "sinmakoto": {
-        "blogTitle": null,
-        "blogURL": null,
-        "iconURL": "http://cdn1.www.st-hatena.com/users/si/sinmakoto/profile.gif",
-        "bookmarkAverage": null
-      },
       "A17011200": {
         "blogTitle": null,
         "blogURL": null,
         "iconURL": "http://cdn1.www.st-hatena.com/users/A1/A17011200/profile.gif",
+        "bookmarkAverage": null
+      },
+      "sinmakoto": {
+        "blogTitle": null,
+        "blogURL": null,
+        "iconURL": "http://cdn1.www.st-hatena.com/users/si/sinmakoto/profile.gif",
         "bookmarkAverage": null
       },
       "you_505": {
@@ -97,6 +97,24 @@
         "iconURL": "http://cdn1.www.st-hatena.com/users/ao/aox/profile.gif",
         "bookmarkAverage": 2.8
       },
+      "camelletgo": {
+        "blogTitle": null,
+        "blogURL": null,
+        "iconURL": "http://cdn1.www.st-hatena.com/users/ca/camelletgo/profile.gif",
+        "bookmarkAverage": null
+      },
+      "antiquekoreander": {
+        "blogTitle": "洋書のある暮らし",
+        "blogURL": "http://antiquebooks.hatenablog.com/",
+        "iconURL": "http://cdn1.www.st-hatena.com/users/an/antiquekoreander/profile.gif",
+        "bookmarkAverage": 8.033333333333333
+      },
+      "fromAmbertoZen": {
+        "blogTitle": "わが忘れなば",
+        "blogURL": "http://wagawasurenaba.hatenablog.com/",
+        "iconURL": "http://cdn1.www.st-hatena.com/users/fr/fromAmbertoZen/profile.gif",
+        "bookmarkAverage": 3.933333333333333
+      },
       "sue445": {
         "blogTitle": "くりにっき",
         "blogURL": "http://sue445.hatenablog.com/",
@@ -108,42 +126,6 @@
         "blogURL": "http://ymrl.hatenablog.com/",
         "iconURL": "http://cdn1.www.st-hatena.com/users/ym/ymrl/profile.gif",
         "bookmarkAverage": 71.36666666666666
-      },
-      "fromAmbertoZen": {
-        "blogTitle": "わが忘れなば",
-        "blogURL": "http://wagawasurenaba.hatenablog.com/",
-        "iconURL": "http://cdn1.www.st-hatena.com/users/fr/fromAmbertoZen/profile.gif",
-        "bookmarkAverage": 3.933333333333333
-      },
-      "antiquekoreander": {
-        "blogTitle": "洋書のある暮らし",
-        "blogURL": "http://antiquebooks.hatenablog.com/",
-        "iconURL": "http://cdn1.www.st-hatena.com/users/an/antiquekoreander/profile.gif",
-        "bookmarkAverage": 8.033333333333333
-      },
-      "cou_z": {
-        "blogTitle": "cou_zのブログ",
-        "blogURL": "http://coffeeyoshida.hatenablog.com/",
-        "iconURL": "http://cdn1.www.st-hatena.com/users/co/cou_z/profile.gif",
-        "bookmarkAverage": 0.0
-      },
-      "camelletgo": {
-        "blogTitle": null,
-        "blogURL": null,
-        "iconURL": "http://cdn1.www.st-hatena.com/users/ca/camelletgo/profile.gif",
-        "bookmarkAverage": null
-      },
-      "stereocat": {
-        "blogTitle": null,
-        "blogURL": null,
-        "iconURL": "http://cdn1.www.st-hatena.com/users/st/stereocat/profile.gif",
-        "bookmarkAverage": null
-      },
-      "yoshuki": {
-        "blogTitle": "yoshuki's blog",
-        "blogURL": "http://yoshuki.hatenablog.jp/",
-        "iconURL": "http://cdn1.www.st-hatena.com/users/yo/yoshuki/profile.gif",
-        "bookmarkAverage": 0.0
       },
       "nstrkd": {
         "blogTitle": null,
@@ -157,6 +139,30 @@
         "iconURL": "http://cdn1.www.st-hatena.com/users/gi/ginnang7/profile.gif",
         "bookmarkAverage": 0.4
       },
+      "nebokegao": {
+        "blogTitle": "そんなこと言ったって",
+        "blogURL": "http://nebokegao.hatenablog.jp/",
+        "iconURL": "http://cdn1.www.st-hatena.com/users/ne/nebokegao/profile.gif",
+        "bookmarkAverage": 0.0
+      },
+      "hikkomiya": {
+        "blogTitle": null,
+        "blogURL": null,
+        "iconURL": "http://cdn1.www.st-hatena.com/users/hi/hikkomiya/profile.gif",
+        "bookmarkAverage": null
+      },
+      "crosstool": {
+        "blogTitle": null,
+        "blogURL": null,
+        "iconURL": "http://cdn1.www.st-hatena.com/users/cr/crosstool/profile.gif",
+        "bookmarkAverage": null
+      },
+      "mtwo": {
+        "blogTitle": null,
+        "blogURL": null,
+        "iconURL": "http://cdn1.www.st-hatena.com/users/mt/mtwo/profile.gif",
+        "bookmarkAverage": null
+      },
       "yunastr": {
         "blogTitle": "†INNOCENT DAYS† -十五歳の日記-",
         "blogURL": "http://angeroof.hatenablog.jp/",
@@ -169,58 +175,10 @@
         "iconURL": "http://cdn1.www.st-hatena.com/users/in/inujin/profile.gif",
         "bookmarkAverage": 11.3
       },
-      "levites": {
-        "blogTitle": "印刷ブログなのに好き勝手",
-        "blogURL": "http://levites.hatenablog.com/",
-        "iconURL": "http://cdn1.www.st-hatena.com/users/le/levites/profile.gif",
-        "bookmarkAverage": 31.566666666666666
-      },
-      "crosstool": {
-        "blogTitle": null,
-        "blogURL": null,
-        "iconURL": "http://cdn1.www.st-hatena.com/users/cr/crosstool/profile.gif",
-        "bookmarkAverage": null
-      },
-      "hikkomiya": {
-        "blogTitle": null,
-        "blogURL": null,
-        "iconURL": "http://cdn1.www.st-hatena.com/users/hi/hikkomiya/profile.gif",
-        "bookmarkAverage": null
-      },
-      "nebokegao": {
-        "blogTitle": "そんなこと言ったって",
-        "blogURL": "http://nebokegao.hatenablog.jp/",
-        "iconURL": "http://cdn1.www.st-hatena.com/users/ne/nebokegao/profile.gif",
-        "bookmarkAverage": 0.0
-      },
-      "mtwo": {
-        "blogTitle": null,
-        "blogURL": null,
-        "iconURL": "http://cdn1.www.st-hatena.com/users/mt/mtwo/profile.gif",
-        "bookmarkAverage": null
-      },
-      "SikisimaHisayuki": {
-        "blogTitle": "wepli.2",
-        "blogURL": "http://wepli-dot2.hatenablog.com/",
-        "iconURL": "http://cdn1.www.st-hatena.com/users/Si/SikisimaHisayuki/profile.gif",
-        "bookmarkAverage": 73.26666666666667
-      },
       "hem6": {
         "blogTitle": "hem6’s diary",
         "blogURL": "http://hem6.hatenablog.com/",
         "iconURL": "http://cdn1.www.st-hatena.com/users/he/hem6/profile.gif",
-        "bookmarkAverage": 0.0
-      },
-      "pentiumx": {
-        "blogTitle": null,
-        "blogURL": null,
-        "iconURL": "http://cdn1.www.st-hatena.com/users/pe/pentiumx/profile.gif",
-        "bookmarkAverage": null
-      },
-      "baboocon19820419": {
-        "blogTitle": "babooconの雑記",
-        "blogURL": "http://baboocon.hatenablog.jp/",
-        "iconURL": "http://cdn1.www.st-hatena.com/users/ba/baboocon19820419/profile.gif",
         "bookmarkAverage": 0.0
       },
       "firepony": {
@@ -229,17 +187,17 @@
         "iconURL": "http://cdn1.www.st-hatena.com/users/fi/firepony/profile.gif",
         "bookmarkAverage": null
       },
+      "baboocon19820419": {
+        "blogTitle": "babooconの雑記",
+        "blogURL": "http://baboocon.hatenablog.jp/",
+        "iconURL": "http://cdn1.www.st-hatena.com/users/ba/baboocon19820419/profile.gif",
+        "bookmarkAverage": 0.0
+      },
       "s_ryuuki": {
         "blogTitle": null,
         "blogURL": null,
         "iconURL": "http://cdn1.www.st-hatena.com/users/s_/s_ryuuki/profile.gif",
         "bookmarkAverage": null
-      },
-      "niwatori720": {
-        "blogTitle": "niwatori720のブログ",
-        "blogURL": "http://niwatori720.hatenablog.com/",
-        "iconURL": "http://cdn1.www.st-hatena.com/users/ni/niwatori720/profile.gif",
-        "bookmarkAverage": 0.0
       },
       "nobujirou": {
         "blogTitle": "アーキペラゴを探して",
@@ -247,31 +205,122 @@
         "iconURL": "http://cdn1.www.st-hatena.com/users/no/nobujirou/profile.gif",
         "bookmarkAverage": 26.5
       },
+      "niwatori720": {
+        "blogTitle": "niwatori720のブログ",
+        "blogURL": "http://niwatori720.hatenablog.com/",
+        "iconURL": "http://cdn1.www.st-hatena.com/users/ni/niwatori720/profile.gif",
+        "bookmarkAverage": 0.0
+      },
+      "osakaspy6160": {
+        "blogTitle": null,
+        "blogURL": null,
+        "iconURL": "http://cdn1.www.st-hatena.com/users/os/osakaspy6160/profile.gif",
+        "bookmarkAverage": null
+      },
+      "jubmenpopo": {
+        "blogTitle": null,
+        "blogURL": null,
+        "iconURL": "http://cdn1.www.st-hatena.com/users/ju/jubmenpopo/profile.gif",
+        "bookmarkAverage": null
+      },
+      "hogenishi": {
+        "blogTitle": null,
+        "blogURL": null,
+        "iconURL": "http://cdn1.www.st-hatena.com/users/ho/hogenishi/profile.gif",
+        "bookmarkAverage": null
+      },
       "syonx": {
         "blogTitle": "syonx",
         "blogURL": "http://syonx.hatenablog.com/",
         "iconURL": "http://cdn1.www.st-hatena.com/users/sy/syonx/profile.gif",
         "bookmarkAverage": 5.1
       },
-      "FRISKER": {
-        "blogTitle": "FRISKER’s blog",
-        "blogURL": "http://frisker.hatenablog.com/",
-        "iconURL": "http://cdn1.www.st-hatena.com/users/FR/FRISKER/profile.gif",
-        "bookmarkAverage": 0.3
-      },
       "daiiz": {
         "blogTitle": "daizの日記",
         "blogURL": "http://daiiz.hatenablog.com/",
         "iconURL": "http://cdn1.www.st-hatena.com/users/da/daiiz/profile.gif",
         "bookmarkAverage": 0.9333333333333333
+      },
+      "ryskosn": {
+        "blogTitle": null,
+        "blogURL": null,
+        "iconURL": "http://cdn1.www.st-hatena.com/users/ry/ryskosn/profile.gif",
+        "bookmarkAverage": null
+      },
+      "pentiumx": {
+        "blogTitle": null,
+        "blogURL": null,
+        "iconURL": "http://cdn1.www.st-hatena.com/users/pe/pentiumx/profile.gif",
+        "bookmarkAverage": null
+      },
+      "tsurutan": {
+        "blogTitle": "tsurutanのつぶやき",
+        "blogURL": "http://tsurutan.hatenablog.com/",
+        "iconURL": "http://cdn1.www.st-hatena.com/users/ts/tsurutan/profile.gif",
+        "bookmarkAverage": 2.8947368421052633
+      },
+      "peketamin": {
+        "blogTitle": "peketaminの日記",
+        "blogURL": "http://peketamin.hatenablog.jp/",
+        "iconURL": "http://cdn1.www.st-hatena.com/users/pe/peketamin/profile.gif",
+        "bookmarkAverage": 0.26666666666666666
+      },
+      "nemumupoyo": {
+        "blogTitle": "ねむむ日記",
+        "blogURL": "http://nemumu.hateblo.jp/",
+        "iconURL": "http://cdn1.www.st-hatena.com/users/ne/nemumupoyo/profile.gif",
+        "bookmarkAverage": 9.366666666666667
+      },
+      "yogasa": {
+        "blogTitle": "yogasaの日記",
+        "blogURL": "http://yogasa.hatenablog.jp/",
+        "iconURL": "http://cdn1.www.st-hatena.com/users/yo/yogasa/profile.gif",
+        "bookmarkAverage": 0.0
+      },
+      "yasuharu519": {
+        "blogTitle": "def yasuharu519(self):",
+        "blogURL": "http://yasuharu519.hatenablog.com/",
+        "iconURL": "http://cdn1.www.st-hatena.com/users/ya/yasuharu519/profile.gif",
+        "bookmarkAverage": 2.5
+      },
+      "surumedaka": {
+        "blogTitle": "備忘録",
+        "blogURL": "http://sre.hatenablog.com/",
+        "iconURL": "http://cdn1.www.st-hatena.com/users/su/surumedaka/profile.gif",
+        "bookmarkAverage": 0.0
+      },
+      "doublehorn93": {
+        "blogTitle": null,
+        "blogURL": null,
+        "iconURL": "http://cdn1.www.st-hatena.com/users/do/doublehorn93/profile.gif",
+        "bookmarkAverage": null
+      },
+      "fumikony": {
+        "blogTitle": "めものようなもの",
+        "blogURL": "http://fumikony.hatenablog.com/",
+        "iconURL": "http://cdn1.www.st-hatena.com/users/fu/fumikony/profile.gif",
+        "bookmarkAverage": 0.5666666666666667
+      },
+      "yoshuki": {
+        "blogTitle": "yoshuki's blog",
+        "blogURL": "http://yoshuki.hatenablog.jp/",
+        "iconURL": "http://cdn1.www.st-hatena.com/users/yo/yoshuki/profile.gif",
+        "bookmarkAverage": 0.0
+      },
+      "kuroneko0208": {
+        "blogTitle": "くろねこ日記",
+        "blogURL": "http://kuroneko0208.hatenablog.com/",
+        "iconURL": "http://cdn1.www.st-hatena.com/users/ku/kuroneko0208/profile.gif",
+        "bookmarkAverage": 4.633333333333334
+      },
+      "tksnesne": {
+        "blogTitle": null,
+        "blogURL": null,
+        "iconURL": "http://cdn1.www.st-hatena.com/users/tk/tksnesne/profile.gif",
+        "bookmarkAverage": null
       }
     },
     "links": [
-      {
-        "target": "SWIMATH2",
-        "source": "masayoshinym",
-        "bookmarkRate": 0.13333333333333333
-      },
       {
         "target": "SWIMATH2",
         "source": "rodori",
@@ -284,27 +333,12 @@
       },
       {
         "target": "SWIMATH2",
-        "source": "osakaspy6160",
-        "bookmarkRate": 0.1
+        "source": "masayoshinym",
+        "bookmarkRate": 0.13333333333333333
       },
       {
         "target": "SWIMATH2",
-        "source": "peketamin",
-        "bookmarkRate": 0.1
-      },
-      {
-        "target": "SWIMATH2",
-        "source": "mhkohei",
-        "bookmarkRate": 0.1
-      },
-      {
-        "target": "SWIMATH2",
-        "source": "hatebupost",
-        "bookmarkRate": 0.1
-      },
-      {
-        "target": "SWIMATH2",
-        "source": "karur4n",
+        "source": "morioka",
         "bookmarkRate": 0.1
       },
       {
@@ -314,7 +348,27 @@
       },
       {
         "target": "SWIMATH2",
+        "source": "mhkohei",
+        "bookmarkRate": 0.1
+      },
+      {
+        "target": "SWIMATH2",
+        "source": "karur4n",
+        "bookmarkRate": 0.1
+      },
+      {
+        "target": "SWIMATH2",
+        "source": "ginga0118",
+        "bookmarkRate": 0.1
+      },
+      {
+        "target": "SWIMATH2",
         "source": "flyingbird1",
+        "bookmarkRate": 0.1
+      },
+      {
+        "target": "SWIMATH2",
+        "source": "sucrose",
         "bookmarkRate": 0.1
       },
       {
@@ -366,31 +420,6 @@
         "target": "hyaknihyak",
         "source": "camelletgo",
         "bookmarkRate": 0.1
-      },
-      {
-        "target": "peketamin",
-        "source": "levites",
-        "bookmarkRate": 0.16666666666666666
-      },
-      {
-        "target": "peketamin",
-        "source": "cou_z",
-        "bookmarkRate": 0.03333333333333333
-      },
-      {
-        "target": "peketamin",
-        "source": "SikisimaHisayuki",
-        "bookmarkRate": 0.03333333333333333
-      },
-      {
-        "target": "peketamin",
-        "source": "stereocat",
-        "bookmarkRate": 0.03333333333333333
-      },
-      {
-        "target": "mhkohei",
-        "source": "yoshuki",
-        "bookmarkRate": 0.03571428571428571
       },
       {
         "target": "rodori",
@@ -484,13 +513,88 @@
       },
       {
         "target": "karur4n",
-        "source": "FRISKER",
+        "source": "osakaspy6160",
         "bookmarkRate": 0.03333333333333333
       },
       {
         "target": "karur4n",
-        "source": "osakaspy6160",
+        "source": "jubmenpopo",
         "bookmarkRate": 0.03333333333333333
+      },
+      {
+        "target": "ginga0118",
+        "source": "nemumupoyo",
+        "bookmarkRate": 0.03333333333333333
+      },
+      {
+        "target": "ginga0118",
+        "source": "hogenishi",
+        "bookmarkRate": 0.03333333333333333
+      },
+      {
+        "target": "ginga0118",
+        "source": "ryskosn",
+        "bookmarkRate": 0.03333333333333333
+      },
+      {
+        "target": "ginga0118",
+        "source": "tsurutan",
+        "bookmarkRate": 0.03333333333333333
+      },
+      {
+        "target": "sucrose",
+        "source": "yasuharu519",
+        "bookmarkRate": 0.13333333333333333
+      },
+      {
+        "target": "sucrose",
+        "source": "peketamin",
+        "bookmarkRate": 0.06666666666666667
+      },
+      {
+        "target": "sucrose",
+        "source": "fumikony",
+        "bookmarkRate": 0.06666666666666667
+      },
+      {
+        "target": "sucrose",
+        "source": "kuroneko0208",
+        "bookmarkRate": 0.06666666666666667
+      },
+      {
+        "target": "sucrose",
+        "source": "yogasa",
+        "bookmarkRate": 0.06666666666666667
+      },
+      {
+        "target": "sucrose",
+        "source": "osakaspy6160",
+        "bookmarkRate": 0.06666666666666667
+      },
+      {
+        "target": "sucrose",
+        "source": "ginga0118",
+        "bookmarkRate": 0.06666666666666667
+      },
+      {
+        "target": "sucrose",
+        "source": "surumedaka",
+        "bookmarkRate": 0.03333333333333333
+      },
+      {
+        "target": "sucrose",
+        "source": "tksnesne",
+        "bookmarkRate": 0.03333333333333333
+      },
+      {
+        "target": "sucrose",
+        "source": "doublehorn93",
+        "bookmarkRate": 0.03333333333333333
+      },
+      {
+        "target": "mhkohei",
+        "source": "yoshuki",
+        "bookmarkRate": 0.03571428571428571
       }
     ]
   }
