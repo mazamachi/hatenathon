@@ -1,0 +1,7 @@
+development:
+  adapter: mysql2
+  database: wiki_viz
+  host: localhost
+  username: root
+  password: mya8192mysql
+  encoding: utf8
