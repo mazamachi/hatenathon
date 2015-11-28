@@ -7,9 +7,9 @@ const gojoTreshHold = 0.6;
 //     .defer(d3.json, "http://localhost:4567/network?id=SWIMATH2")
 //     .await(main);
 function main(){
-  var path = "example4.json"
+  var path = "big_example3.json"
   if (ids.length != 0){
-    path = "http://localhost:4567/network?"
+    path = "http://localhost:1234/network?"
     path += ids.map(function(id){
       return "id[]="+id
     }).join("&");

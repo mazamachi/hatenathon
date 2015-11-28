@@ -93,8 +93,10 @@ def create_network_json(*user_names, max_depth:3)
   user_hash = {}
   links = []
   (0...max_depth).each do |depth|
+    STDERR.puts open_array[depth]
     Parallel.each(open_array[depth], in_threads:10) do |user_name|
       if user_hash[user_name] == nil
+        STDERR.puts user_name
         user = User.new(user_name)
         user_hash[user_name] = user.create_user_hash
         next if !user.has_blog
@@ -108,4 +110,4 @@ def create_network_json(*user_names, max_depth:3)
   return JSON::pretty_generate([{users:user_hash, links:links}])
 end
 
-# puts create_network_json("SWIMATH2",max_depth:4)
+# puts create_network_json(["SWIMATH2", "g-gourmedia", "keisolutions", "eaidem", "ikdhkr", "biogLife", "hazama19258370", "keikun028", "moarh", "Rosylife", "sugatareiji", "abberoad", "skky17", "buried_treasure"],max_depth:3)
