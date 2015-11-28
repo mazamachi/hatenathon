@@ -1,0 +1,27 @@
+{
+	"users":{
+		"SWIMATH2":{
+			"blogTitle": "クフだろ",
+			"blogURL": "http://swimath2.hatenablog.com/",
+			"iconURL": "http://cdn1.www.st-hatena.com/users/SW/SWIMATH2/profile.gif",
+			"bookmarkAverage": 10
+		}
+	},
+	"links":[
+		{
+			"target": "SWIMATH2",
+			"source": "rodori",
+			"bookmarkRate": 0.13333333333333333
+		},
+		{
+			"target": "SWIMATH2",
+			"source": "hyaknihyak",
+			"bookmarkRate": 0.13333333333333333
+		},
+		{
+			"target": "SWIMATH2",
+			"source": "morioka",
+			"bookmarkRate": 0.1
+		}
+	]
+}
