@@ -89,7 +89,7 @@ class User
 end
 
 def create_network_json(*user_names, max_depth:3)
-  open_array = [user_names]+ [[]]*(max_depth-1)
+  open_array = [*user_names]+ [[]]*(max_depth-1)
   user_hash = {}
   links = []
   (0...max_depth).each do |depth|

@@ -1,11 +1,22 @@
 var width = window.innerWidth * 0.8;
 var height = window.innerHeight * 0.95;
+var ids = []
 const WeightToRadius = 6;
 const gojoTreshHold = 0.6;
-
+// queue()
+//     .defer(d3.json, "http://localhost:4567/network?id=SWIMATH2")
+//     .await(main);
 function main(){
-  d3.json("./example4.json",function(err,data){
+  var path = "example4.json"
+  if (ids.length != 0){
+    path = "http://localhost:4567/network?"
+    path += ids.map(function(id){
+      return "id[]="+id
+    }).join("&");
+  }
+  d3.json(path,function(err,data){
     if(err){
+      console.log(err);
       console.log("err,hage!!");
     }else{
       // console.log(data);
@@ -291,6 +302,9 @@ function main(){
 
       function searchFan(userID){
         console.log(userID);
+        d3.select("svg").remove();
+        ids.push(userID);
+        main();
       }
   });
 };
