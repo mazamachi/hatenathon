@@ -1,0 +1,42 @@
+#modalClose {
+  position: absolute;
+  top: -0px;
+  right: -0px;
+  z-index: 1;
+}
+
+#modal {
+  position:absolute;
+  z-index:2;
+  background: rgba(255, 252, 255, 0.95);
+  border: 1px black solid;
+  box-shadow: 10px 10px 5px #888888;
+  display: none;
+}
+
+#formClose {
+  position: absolute;
+  top: -0px;
+  right: -0px;
+  z-index: 1;
+}
+
+#formModal {
+  position:absolute;
+  z-index:2;
+  background: rgba(255, 252, 255, 0.95);
+  border: 1px black solid;
+  box-shadow: 10px 10px 5px #888888;
+  display: none;
+}
+
+#topmedia {
+  max-height: 500px;
+  overflow: auto;
+}
+
+body {
+  background-color: rgb(236, 236, 236);
+  padding-top: 70px;
+  font-family:"AbeeZee",sans-serif;
+}
