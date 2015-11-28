@@ -65,9 +65,12 @@ function main(){
                    .attr("fill", "none")
                    .attr("stroke", function(d){
                     if(d.bookmarkRate > gojoTreshHold){
-                      return "blue";
+                      // return "blue";
+                      return "rgba(60, 110, 194," + d.bookmarkRate + ")";
                     }else{
-                      return "red";
+                      // return "red";
+                      return "rgba(233, 66, 66," + d.bookmarkRate + ")";
+
                     }
                     return "black";
                    })
