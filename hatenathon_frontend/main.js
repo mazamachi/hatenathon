@@ -185,7 +185,7 @@ function main(){
 
       function viewModal(name){
         var modal = d3.select("#modal");
-        var htmlContent = modalHTMLmaker(name,users,links);
+        var htmlContent = modalHTMLmaker(name);
         modal.style("top","10%")
               .style("left","30%")
               .style("height","80%")
@@ -219,72 +219,68 @@ function main(){
         return data.source[axis] + (data.target[axis] - data.source[axis]) * lineRadRatio;
       }
 
-  });
-};
+      function modalHTMLmaker(userName){
+        function ContentBox(name){
+          var content = "";
 
-
-function modalHTMLmaker(userName,users,links){
-  var userName = userName;
-  var users = users;
-  var links = links;
-  function ContentBox(name){
-    var content = "";
-
-    content += '<div class="media">';
-    content +=  ' <div class="media-left">';
-    content += '   <img src=" '+ users[name].iconURL +' " height = "100%">'
-    content += ' </div>';
-    content +=  '<div class="media-body">';
-    content +=  '  <div class="col-md-3 text-right">userName:</div><div class="col-md-9">' + name +'</div>';
-    var blogTitle = users[name].blogTitle;
-    var bookmarkAverage = users[name].bookmarkAverage;
-    content +=  '  <div class="col-md-3 text-right">Blog:</div><div class="col-md-9"><a href="'+users[name].blogURL+'">'+ blogTitle +'</a></div>';
-    content += '<div class="col-md-3 text-right">Popularity:</div><div class="col-md-9">'+bookmarkAverage+'</div>';
-    content += '<div class="col-md-12" id="topmedia"></div>';
-    content +=  '</div>';
-    content += '</div>';
-    content += '</div>';
-
-    return content;
-  }
-  function fanList(name){
-    var fans = [];
-    links.forEach(function(d){
-      if(d.target.name == name){
-        fans.push(d.source.name);
-      }
-    });
-    var list="";
-    if(fans.length != 0){
-      fans.forEach(function(name){
-        list += '<div class="media">';
-        list +=  ' <div class="media-left">';
-        list += '   <img src=" '+ users[name].iconURL +' " height = "100%">'
-        list += ' </div>';
-        list +=  '<div class="media-body">';
-        list +=  '  <div class="col-md-3 text-right">userName:</div><div class="col-md-9">' + name +'</div>';
-        if(users[name].blogTitle == null){
-          var blogTitle = "No Blog";
-          var bookmarkAverage = 0;
-          list +=  '  <div class="col-md-3 text-right">Blog:</div><div class="col-md-9">'+ blogTitle +'</div>';
-        }else{
+          content += '<div class="media">';
+          content +=  ' <div class="media-left">';
+          content += '   <img src=" '+ users[name].iconURL +' " height = "100%">'
+          content += ' </div>';
+          content +=  '<div class="media-body">';
+          content +=  '  <div class="col-md-3 text-right">userName:</div><div class="col-md-9">' + name +'</div>';
           var blogTitle = users[name].blogTitle;
           var bookmarkAverage = users[name].bookmarkAverage;
-          list +=  '  <div class="col-md-3 text-right">Blog:</div><div class="col-md-9"><a href="'+users[name].blogURL+'">'+ blogTitle +'</a></div>';
-        }
+          content +=  '  <div class="col-md-3 text-right">Blog:</div><div class="col-md-9"><a href="'+users[name].blogURL+'">'+ blogTitle +'</a></div>';
+          content += '<div class="col-md-3 text-right">Popularity:</div><div class="col-md-9">'+bookmarkAverage+'</div>';
+          content += '<div class="col-md-12" id="topmedia"></div>';
+          content +=  '</div>';
+          content += '</div>';
+          content += '</div>';
 
-        list += '<div class="col-md-3 text-right">Popularity:</div><div class="col-md-9">'+bookmarkAverage+'</div>';
-        list +=  '</div>';
-        list += '</div>';
-        list += '</div>';
-      });
-    }else{
-        list += "<h2> no data </h2>"
-    }
-    return list;
-  }
-  return {
-    contentBox: ContentBox(userName),
-    fanList: fanList(userName)
-  }
-}
+          return content;
+        }
+        function fanList(name){
+          var fans = [];
+          links.forEach(function(d){
+            if(d.target.name == name){
+              fans.push(d.source.name);
+            }
+          });
+          var list="";
+          if(fans.length != 0){
+            fans.forEach(function(name){
+              list += '<div class="media">';
+              list +=  ' <div class="media-left">';
+              list += '   <img src=" '+ users[name].iconURL +' " height = "100%">'
+              list += ' </div>';
+              list +=  '<div class="media-body">';
+              list +=  '  <div class="col-md-3 text-right">userName:</div><div class="col-md-9">' + name +'</div>';
+              if(users[name].blogTitle == null){
+                var blogTitle = "No Blog";
+                var bookmarkAverage = 0;
+                list +=  '  <div class="col-md-3 text-right">Blog:</div><div class="col-md-9">'+ blogTitle +'</div>';
+              }else{
+                var blogTitle = users[name].blogTitle;
+                var bookmarkAverage = users[name].bookmarkAverage;
+                list +=  '  <div class="col-md-3 text-right">Blog:</div><div class="col-md-9"><a href="'+users[name].blogURL+'">'+ blogTitle +'</a></div>';
+              }
+
+              list += '<div class="col-md-3 text-right">Popularity:</div><div class="col-md-9">'+bookmarkAverage+'</div>';
+              list +=  '</div>';
+              list += '</div>';
+              list += '</div>';
+            });
+          }else{
+              list += "<h2> no data </h2>"
+          }
+          return list;
+        }
+        return {
+          contentBox: ContentBox(userName),
+          fanList: fanList(userName)
+        }
+      }
+
+  });
+};
