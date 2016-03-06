@@ -1,9 +1,9 @@
-var width = window.innerWidth * 0.8;
-var height = window.innerHeight * 0.95;
-var ids = []
-const WeightToRadius = 6;
-const gojoTreshHold = 0.5;
 function main(){
+  var width = window.innerWidth * 0.8;
+  var height = window.innerHeight * 0.95;
+  var ids = []
+  const WeightToRadius = 6;
+  const gojoTreshHold = 0.5;
   var path = "hikarujinzai4.json"
   if (ids.length != 0){
     path = "http://localhost:1234/network?"
@@ -12,6 +12,8 @@ function main(){
     }).join("&");
   }
   d3.json(path,function(err,data){
+    // データの読み込み処理。
+    // エラーが起きなければdataの内容をからグラフデータを生成する。
     if(err){
       console.log(err);
     }else{
@@ -29,11 +31,6 @@ function main(){
         link.target = nodes[link.target] || (nodes[link.target] = {name: link.target})
       });
     }
-
-    d3.select("#searchbtn")
-      .on("click",function(){
-        searchButton();
-      });
 
     var zoom = d3.behavior.zoom()
                           .scaleExtent([0.1, 10])
@@ -224,6 +221,7 @@ function main(){
 
   });
 };
+
 
 function modalHTMLmaker(userName,users,links){
   var userName = userName;
