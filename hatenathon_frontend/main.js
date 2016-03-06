@@ -49,8 +49,8 @@ function main(){
        .attr("viewBox","0 -5 10 10")
        .attr("refX",15)
        .attr("refY",0)
-       .attr("markerWidth", 6)
-       .attr("markerHeight", 6)
+       .attr("markerWidth", 3)
+       .attr("markerHeight", 3)
        .attr("orient", "auto")
        .append("svg:path")
        .attr("d","M0,-5L10,0L0,5");
@@ -84,13 +84,19 @@ function main(){
                           .nodes(d3.values(nodes))
                           .links(links)
                           .size([width,height])
-                          .linkDistance(function(d){
-                            return 100*(1.5-d.bookmarkRate);
-                          })
                           .charge(function(d){
-
-                            return -users[d.name]["bookmarkAverage"]*10;
-                          });
+                            return -users[d.name]["bookmarkAverage"]*100;
+                          })
+                          .linkDistance(function(link){
+                            if(link.bookmarkRate >= gojoTreshHold * 0.8){
+                              return 50 / Math.pow(link.bookmarkRate,1.5);
+                            }else{
+                              return 50 / Math.pow(link.bookmarkRate,1 + link.bookmarkRate);
+                            }
+                          })
+                          .gravity(0.7)
+                          .friction(0.7);
+                          // .theta(0.5)
 
      var container = svg.append("g");
 
@@ -101,10 +107,9 @@ function main(){
                    .attr("fill", "none")
                    .attr("stroke", function(d){
                     if(d.bookmarkRate > gojoTreshHold){
-                      return "rgba(60, 110, 194," + d.bookmarkRate + ")";
+                      return "rgba(233, 44, 44," + d.bookmarkRate/2 + ")";
                     }else{
-                      return "rgba(233, 66, 66," + d.bookmarkRate + ")";
-
+                      return "rgba(100, 66, 66," + d.bookmarkRate/6 + ")";
                     }
                     return "black";
                    })
@@ -152,7 +157,7 @@ function main(){
     graph.on("tick",handler.tick)
          .start();
 
-     svg.call(handler.zoom);
+     svg.call(zoom);
 
       function viewModal(name){
         var modal = d3.select("#modal");
