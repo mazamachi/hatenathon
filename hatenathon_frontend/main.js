@@ -32,21 +32,10 @@ function main(){
       });
     }
 
-    var zoom = d3.behavior.zoom()
-                          .scaleExtent([0.1, 10])
-                          .on("zoom", zoomed);
-
-    var drag = d3.behavior.drag()
-                          .origin(function(d) { return d; })
-                          .on("dragstart", dragstarted)
-                          .on("drag", dragged)
-                          .on("dragend", dragended);
-
     var svg = d3.select(".dataView")
                 .append("svg")
                 .attr("width",width)
-                .attr("height",height)
-                .call(zoom);
+                .attr("height",height);
 
     var defs = svg.append("defs");
 
@@ -101,9 +90,7 @@ function main(){
                           .charge(function(d){
 
                             return -users[d.name]["bookmarkAverage"]*10;
-                          })
-                          .on("tick",tick)
-                          .start();
+                          });
 
      var container = svg.append("g");
 
@@ -150,38 +137,22 @@ function main(){
            return "url('#image_" + d.name + "')";
          });
 
+      var handler = d3eventHandler();
 
-      function tick(){
-        link.attr("x1",function(d){return d.source.x;})
-            .attr("y1",function(d){return d.source.y;})
-            .attr("x2",function(d){
-              return modifyLineCoordinate(d,"x",graph);
-            })
-            .attr("y2",function(d){
-              return modifyLineCoordinate(d,"y",graph);
-            });
+     var zoom = d3.behavior.zoom()
+                           .scaleExtent([0.1, 10])
+                           .on("zoom", handler.zoomed);
 
-        node.attr("transform",function(d){
-          return "translate(" + d.x + "," + d.y + ")";
-        });
-      }
+     var drag = d3.behavior.drag()
+                           .origin(function(d) { return d; })
+                           .on("dragstart", handler.dragstarted)
+                           .on("drag", handler.dragged)
+                           .on("dragend", handler.dragended);
 
-      function zoomed() {
-        container.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
-      }
+    graph.on("tick",handler.tick)
+         .start();
 
-      function dragstarted(d) {
-        d3.event.sourceEvent.stopPropagation();
-        d3.select(this).classed("dragging", true);
-      }
-
-      function dragged(d) {
-        d3.select(this).attr("cx", d.x = d3.event.x).attr("cy", d.y = d3.event.y);
-      }
-
-      function dragended(d) {
-        d3.select(this).classed("dragging", false);
-      }
+     svg.call(handler.zoom);
 
       function viewModal(name){
         var modal = d3.select("#modal");
@@ -217,6 +188,48 @@ function main(){
         radiusBuf = Math.sqrt(radiusBuf);
         var lineRadRatio = 1 - radiusBuf/lineLength;
         return data.source[axis] + (data.target[axis] - data.source[axis]) * lineRadRatio;
+      }
+
+      function d3eventHandler(){
+        function tick(){
+          link.attr("x1",function(d){return d.source.x;})
+              .attr("y1",function(d){return d.source.y;})
+              .attr("x2",function(d){
+                return modifyLineCoordinate(d,"x",graph);
+              })
+              .attr("y2",function(d){
+                return modifyLineCoordinate(d,"y",graph);
+              });
+
+          node.attr("transform",function(d){
+            return "translate(" + d.x + "," + d.y + ")";
+          });
+        }
+
+        function zoomed() {
+          container.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+        }
+
+        function dragstarted(d) {
+          d3.event.sourceEvent.stopPropagation();
+          d3.select(this).classed("dragging", true);
+        }
+
+        function dragged(d) {
+          d3.select(this).attr("cx", d.x = d3.event.x).attr("cy", d.y = d3.event.y);
+        }
+
+        function dragended(d) {
+          d3.select(this).classed("dragging", false);
+        }
+
+        return {
+          tick: function(){tick();},
+          zoomed:function(){zoomed();},
+          dragstarted:function(d){dragstarted(d);},
+          dragged:function(d){dragged(d);},
+          dragended:function(d){dragended(d);}
+        }
       }
 
       function modalHTMLmaker(userName){
