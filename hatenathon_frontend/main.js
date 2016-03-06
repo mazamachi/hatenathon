@@ -199,10 +199,6 @@ function main(){
 
         modal.select("#content").select("#top").html(ContentBox(name));
         modal.select("#content").select("#topmedia").html(fanList(name));
-        d3.select("#changeIDBtn")
-          .on("click",function(){
-            searchFan(name);
-          });
       }
 
       function ContentBox(name){
@@ -258,11 +254,8 @@ function main(){
             list += '</div>';
           });
         }else{
-          list += '<div class="col-md-12 text-center btn btn-sm" id="changeIDBtn" style="font-size:18px; margin:10px 0px; background-color:rgb(204, 204, 204);">';
-          list += '<span class="glyphicon glyphicon-chevron-down">Search Fan</span>';
-          list += '</div>';
+            list += "<h2> no data </h2>"
         }
-
         return list;
       }
 
@@ -286,22 +279,5 @@ function main(){
         return data.source[axis] + (data.target[axis] - data.source[axis]) * lineRadRatio;
       }
 
-      function searchButton(){
-        var id = document.getElementById("userID").value;
-        if(users[id] != undefined){
-          var g = d3.select("#g_"+id).selectAll("circle")
-          g.transition()
-           .duration(1500)
-           .style("fill","rgb(244, 252, 174)")
-           .transition()
-           .duration(1500)
-           .style("fill","url('#image_" + id + "')");
-        }
-      };
-
   });
 };
-function searchFan(userID){
-  ids.push(userID);
-  main();
-}
