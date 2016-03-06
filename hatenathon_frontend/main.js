@@ -14,15 +14,12 @@ function main(){
   d3.json(path,function(err,data){
     if(err){
       console.log(err);
-      console.log("err,hage!!");
     }else{
       d3.select("svg").remove();
-      console.log(data);
       var links = data[0].links;
       var users = data[0].users;
       var nodes = {};
       links.forEach(function(link){
-        // console.log(link);
         if(!(link.source in nodes)){
           nodes[link.source] = {name:link.source};
           link.source = nodes[link.source];
@@ -102,7 +99,6 @@ function main(){
                           .links(links)
                           .size([width,height])
                           .linkDistance(function(d){
-                            console.log(d);
                             return 100*(1.5-d.bookmarkRate);
                           })
                           .charge(function(d){
@@ -210,8 +206,6 @@ function main(){
       }
 
       function ContentBox(name){
-        console.log(users[name]);
-
         var content = "";
 
         content += '<div class="media">';
@@ -239,7 +233,6 @@ function main(){
             fans.push(d.source.name);
           }
         });
-        console.log(fans);
         var list="";
         if(fans.length != 0){
           fans.forEach(function(name){
@@ -249,7 +242,6 @@ function main(){
             list += ' </div>';
             list +=  '<div class="media-body">';
             list +=  '  <div class="col-md-3 text-right">userName:</div><div class="col-md-9">' + name +'</div>';
-            console.log(users[name].blogTitle);
             if(users[name].blogTitle == null){
               var blogTitle = "No Blog";
               var bookmarkAverage = 0;
@@ -296,7 +288,6 @@ function main(){
 
       function searchButton(){
         var id = document.getElementById("userID").value;
-        console.log(id);
         if(users[id] != undefined){
           var g = d3.select("#g_"+id).selectAll("circle")
           g.transition()
@@ -311,7 +302,6 @@ function main(){
   });
 };
 function searchFan(userID){
-  console.log(userID);
   ids.push(userID);
   main();
 }
