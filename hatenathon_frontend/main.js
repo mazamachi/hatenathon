@@ -3,9 +3,6 @@ var height = window.innerHeight * 0.95;
 var ids = []
 const WeightToRadius = 6;
 const gojoTreshHold = 0.5;
-// queue()
-//     .defer(d3.json, "http://localhost:4567/network?id=SWIMATH2")
-//     .await(main);
 function main(){
   var path = "hikarujinzai4.json"
   if (ids.length != 0){
@@ -34,7 +31,6 @@ function main(){
         }
         link.target = nodes[link.target] || (nodes[link.target] = {name: link.target})
       });
-      // console.log(nodes);
     }
 
     d3.select("#searchbtn")
@@ -65,7 +61,6 @@ function main(){
        .enter()
        .append("marker")
        .attr("id",function(d){
-         // console.log(d);
          return d;
        })
        .attr("viewBox","0 -5 10 10")
@@ -82,7 +77,6 @@ function main(){
          .enter()
          .append("pattern")
          .attr("id",function(d){
-          //  console.log(d);
            return "image_" + d;
          })
          .attr({
@@ -127,10 +121,8 @@ function main(){
                    .attr("fill", "none")
                    .attr("stroke", function(d){
                     if(d.bookmarkRate > gojoTreshHold){
-                      // return "blue";
                       return "rgba(60, 110, 194," + d.bookmarkRate + ")";
                     }else{
-                      // return "red";
                       return "rgba(233, 66, 66," + d.bookmarkRate + ")";
 
                     }
@@ -138,8 +130,6 @@ function main(){
                    })
                    .attr("stroke-width","2px")
                    .attr("marker-end","url(#head)");
-
-     // console.log(graph.links());
 
      var node = container.selectAll(".node")
                    .data(graph.nodes())
@@ -201,8 +191,6 @@ function main(){
       }
 
       function viewModal(name){
-        // console.log(d);
-        // var characterName = d;
         var modal = d3.select("#modal");
         modal.style("top","10%")
               .style("left","30%")
@@ -247,9 +235,7 @@ function main(){
       function fanList(name){
         var fans = [];
         links.forEach(function(d){
-          // console.log(d);
           if(d.target.name == name){
-            // console.log(d.source);
             fans.push(d.source.name);
           }
         });
@@ -293,36 +279,25 @@ function main(){
       }
 
       function modifyLineCoordinate(data,axis,graph){
-        // console.log(data);
         var lineLength = getLength(data.source.x,data.source.y,data.target.x,data.target.y);
         var nodeBuf = graph.nodes().filter(function(buf){
-          // console.log("buf",buf.name);
-          // console.log("d",d.target.name);
           return buf.name == data.target.name;
         })[0];
         var radiusBuf;
-        // console.log(buf.name);
         if(users[nodeBuf.name].bookmarkAverage > 0){
           radiusBuf = WeightToRadius * users[nodeBuf.name].bookmarkAverage;
         }else{
           radiusBuf = WeightToRadius;
         }
         radiusBuf = Math.sqrt(radiusBuf);
-        // console.log("node_buf",node_buf);
-        // console.log("line:",lineLength);
-        // console.log("radius:",node_buf.weight*WeightToRadius);
         var lineRadRatio = 1 - radiusBuf/lineLength;
         return data.source[axis] + (data.target[axis] - data.source[axis]) * lineRadRatio;
       }
 
-
-
       function searchButton(){
-        // console.log("button");
         var id = document.getElementById("userID").value;
         console.log(id);
         if(users[id] != undefined){
-          // viewModal(id);
           var g = d3.select("#g_"+id).selectAll("circle")
           g.transition()
            .duration(1500)
@@ -337,7 +312,6 @@ function main(){
 };
 function searchFan(userID){
   console.log(userID);
-
   ids.push(userID);
   main();
 }
